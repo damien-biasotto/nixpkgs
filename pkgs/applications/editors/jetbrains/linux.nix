@@ -1,15 +1,19 @@
 { stdenv, lib, makeDesktopItem, makeWrapper, patchelf, writeText
 , coreutils, gnugrep, which, git, unzip, libsecret, libnotify, e2fsprogs
+, openjdk19
 , python3, vmopts ? null
 }:
 
-{ pname, product, productShort ? product, version, src, wmClass, jdk, meta, extraLdPath ? [], extraWrapperArgs ? [] }@args:
+{ pname, product, productShort ? product, version, src, wmClass, jdk, openjdk19, meta, extraLdPath ? [], extraWrapperArgs ? [] }@args:
 
 let loName = lib.toLower productShort;
     hiName = lib.toUpper productShort;
     vmoptsName = loName
                + lib.optionalString stdenv.hostPlatform.is64bit "64"
                + ".vmoptions";
+
+    #Do not use jetbrains-jdk for aarch64-linux (flagged broken in this PR)
+    jdkToUse = if (stdenv.isAarch64 && stdenv.isLinux) then openjdk19 else jdk;
 in
 
 with stdenv; lib.makeOverridable mkDerivation (rec {
@@ -67,11 +71,11 @@ with stdenv; lib.makeOverridable mkDerivation (rec {
     [[ -f $out/$pname/bin/${loName}.svg ]] && ln -s $out/$pname/bin/${loName}.svg $out/share/pixmaps/${pname}.svg
     mv bin/fsnotifier* $out/libexec/${pname}/.
 
-    jdk=${jdk.home}
+    jdk=${jdkToUse.home}
     item=${desktopItem}
 
     makeWrapper "$out/$pname/bin/${loName}.sh" "$out/bin/${pname}" \
-      --prefix PATH : "$out/libexec/${pname}:${lib.makeBinPath [ jdk coreutils gnugrep which git python3 ]}" \
+      --prefix PATH : "$out/libexec/${pname}:${lib.makeBinPath [ jdkToUse coreutils gnugrep which git python3 ]}" \
       --prefix LD_LIBRARY_PATH : "${lib.makeLibraryPath ([
         # Some internals want libstdc++.so.6
         stdenv.cc.cc.lib libsecret e2fsprogs
