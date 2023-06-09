@@ -135,7 +135,7 @@ openjdk17.overrideAttrs (oldAttrs: rec {
     inherit (openjdk17.meta) license platforms mainProgram;
     maintainers = with maintainers; [ edwtjo ];
 
-    broken = stdenv.isDarwin;
+    broken = stdenv.isDarwin || (stdenv.isLinux && stdenv.isAarch64);
   };
 
   passthru = oldAttrs.passthru // {
