@@ -19,10 +19,10 @@
     "dataspell": {
       "update-channel": "DataSpell RELEASE",
       "url-template": "https://download.jetbrains.com/python/dataspell-{version}.tar.gz",
-      "version": "2023.1",
-      "sha256": "12856b7571ff789a427361cfcb4cb1743e7f3af77f611ceda57aafe847328865",
-      "url": "https://download.jetbrains.com/python/dataspell-2023.1.tar.gz",
-      "build_number": "231.8109.197"
+      "version": "2023.1.2",
+      "sha256": "5d53853577b2679cccdd6a409d239a4bc0c1b5c612234b40dbab78d9e3d2a446",
+      "url": "https://download.jetbrains.com/python/dataspell-2023.1.2.tar.gz",
+      "build_number": "231.9011.36"
     },
     "gateway": {
       "update-channel": "Gateway RELEASE",
@@ -250,10 +250,10 @@
     "dataspell": {
       "update-channel": "DataSpell RELEASE",
       "url-template": "https://download.jetbrains.com/python/dataspell-{version}.dmg",
-      "version": "2023.1",
-      "sha256": "dc118f466b6e5fa3e6c449f25977d5d1fc6746c004a000464802c535a1bdaa90",
-      "url": "https://download.jetbrains.com/python/dataspell-2023.1.dmg",
-      "build_number": "231.8109.197"
+      "version": "2023.1.2",
+      "sha256": "5f4375f653ce28b45e17c972ca71b8b34866e76e9a324a6cc3bd482ad4421b04",
+      "url": "https://download.jetbrains.com/python/dataspell-2023.1.2.dmg",
+      "build_number": "231.9011.36"
     },
     "gateway": {
       "update-channel": "Gateway RELEASE",
@@ -365,10 +365,10 @@
     "dataspell": {
       "update-channel": "DataSpell RELEASE",
       "url-template": "https://download.jetbrains.com/python/dataspell-{version}-aarch64.dmg",
-      "version": "2023.1",
-      "sha256": "7b5b4388303bf7d381597995e3f4d5684c0f60a4e5ad5a4481ab4e451be6e2cf",
-      "url": "https://download.jetbrains.com/python/dataspell-2023.1-aarch64.dmg",
-      "build_number": "231.8109.197"
+      "version": "2023.1.2",
+      "sha256": "f9ef32141d044c371de6f410f8d53f8b45bc7339aea45c29bfc345d1c54d9198",
+      "url": "https://download.jetbrains.com/python/dataspell-2023.1.2-aarch64.dmg",
+      "build_number": "231.9011.36"
     },
     "gateway": {
       "update-channel": "Gateway RELEASE",
