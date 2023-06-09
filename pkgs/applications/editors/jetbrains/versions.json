@@ -167,9 +167,9 @@
       "update-channel": "IntelliJ IDEA RELEASE",
       "url-template": "https://download.jetbrains.com/idea/ideaIU-{version}-aarch64.tar.gz",
       "version": "2023.1.2",
-      "sha256": "e1a26070e91bdc6a7d262aeda316a72908d1ffbb8b500f086665bfcd29de249a",
       "url": "https://download.jetbrains.com/idea/ideaIU-2023.1.2-aarch64.tar.gz",
-      "build_number": "231.9011.34"
+      "build_number": "231.9011.34",
+      "sha256": "f55e3cd84b33a8f17bee7befc9c94331924bd8dad0c697f573fb8aed204897cd"
     },
     "mps": {
       "update-channel": "MPS RELEASE",
