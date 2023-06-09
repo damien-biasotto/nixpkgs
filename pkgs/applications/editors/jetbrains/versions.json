@@ -1,5 +1,5 @@
 {
-  "linux": {
+  "x86_64-linux": {
     "clion": {
       "update-channel": "CLion RELEASE",
       "url-template": "https://download.jetbrains.com/cpp/CLion-{version}.tar.gz",
