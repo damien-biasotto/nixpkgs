@@ -1,6 +1,6 @@
 { lib, stdenv, callPackage, fetchurl
 , jdk, cmake, gdb, zlib, python3, icu
-, openjdk19
+, openjdk17
 , lldb
 , dotnet-sdk_6
 , maven
@@ -27,7 +27,6 @@ let
   mkJetBrainsProduct = callPackage package { inherit vmopts; };
 
   # Sorted alphabetically
-
   buildClion = { pname, version, src, license, description, wmClass, ... }:
     (mkJetBrainsProduct {
       inherit pname version src wmClass jdk;
@@ -155,7 +154,7 @@ let
 
   buildIdea = { pname, version, src, license, description, wmClass, product, ... }:
     (mkJetBrainsProduct {
-      inherit pname version src wmClass jdk openjdk19 product;
+      inherit pname version src wmClass jdk openjdk17 product;
       productShort = "IDEA";
       extraLdPath = [ zlib ];
       extraWrapperArgs = [

@@ -1,10 +1,10 @@
 { stdenv, lib, makeDesktopItem, makeWrapper, patchelf, writeText
 , coreutils, gnugrep, which, git, unzip, libsecret, libnotify, e2fsprogs
-, openjdk19
+, openjdk17
 , python3, vmopts ? null
 }:
 
-{ pname, product, productShort ? product, version, src, wmClass, jdk, openjdk19, meta, extraLdPath ? [], extraWrapperArgs ? [] }@args:
+{ pname, product, productShort ? product, version, src, wmClass, jdk, openjdk17, meta, extraLdPath ? [], extraWrapperArgs ? [] }@args:
 
 let loName = lib.toLower productShort;
     hiName = lib.toUpper productShort;
@@ -13,7 +13,7 @@ let loName = lib.toLower productShort;
                + ".vmoptions";
 
     #Do not use jetbrains-jdk for aarch64-linux (flagged broken in this PR)
-    jdkToUse = if (stdenv.isAarch64 && stdenv.isLinux) then openjdk19 else jdk;
+    jdkToUse = if (stdenv.isAarch64 && stdenv.isLinux) then openjdk17 else jdk;
 in
 
 with stdenv; lib.makeOverridable mkDerivation (rec {
